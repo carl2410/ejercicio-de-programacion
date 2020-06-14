@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<link rel="stylesheet" href="stilos carlos.css">
+	
+
+
+
+</head>
+<body>
+	<div class= "container">
+	<header  id="navbar">
+		<a href="#" class="logo">Good<span>Foods</span></a>
+		<ul>
+		<li><a href="#" class="active">home</a></li>
+		<li><a href="#">Menu</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Contact</a></li>
+		</ul>
+		<span class="menuIcon" onclick="menuToggle();"></span>
+		</header>
+		<div class="content">
+		<div class="bannertext" id="slideshowtext">
+		 <div class="active">
+   <h2>EAT Healthy<br>
+    Stay Healthy</h2>
+   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aligua. Ut enim ad minim
+      veniam, quis nostrud exercitation.</p>
+			 <a href="#">Read More</a>
+			</div>
+   <div>
+   <h2>EAT Your<br>
+   Vaggies</h2>
+   <p>Ut enim ad minim veniam,
+	  quis notrud execitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.</p>
+	   <a href="#">Read More</a>
+			 </div>
+   <div>
+   <h2>Good Food<br>
+     Good Mood</h2>
+  <p>Duis aute dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	  <a href="#">Read More</a>
+			</div>
+			</div>
+			<div class="bannerImg" id="slideshow">
+			<img src="imag2.jpg" class="active">
+			<img src="imag3.jpg">
+			</div>
+		    </div>
+		    <div class="icons">
+			<ul class="sci">
+				<li><a href="#"><img src="facebook.png"></a></li>
+				<li><a href="#"><img src="instagram%202.png"></a></li>
+				<li><a href="#"><img src="twitter2.png"></a></li>
+			</ul>
+			<ul class="controls">
+				<li><a><img src="left.png" onclick="prevSlide();prevSlidetext();"></a></li>
+				<li><a><img src="arrow-angle-pointing-to-right.png" onclick="nextSlide(); nextSlidetext(); "></a></li>
+			
+			</ul>
+	</div>
+	<script type="text/javascript">
+		var slideshow = document.getElementById('slideshow');
+		var slides = slideshow.getElementsByTagName('img');
+		var index = 0;
+		
+		function nextSlide(){
+			slides[index].classList.remove('active');
+			index = (index + 1 ) % slides.length;
+			slides[index].classList.add('active');
+			
+		}
+		function prevSlide(){
+			slides[index].classList.remove('active');
+			index = (index - 1 + slides.length) % slides.length;
+			slides[index].classList.add('active');
+		}
+		
+		var slideshowtext = document.getElementById('slideshowtext');
+		var slidestext = slideshowtext.getElementsByTagName('div');
+		var i = 0;
+		
+		function nextSlidetext(){
+			slidestext[i].classList.remove('active');
+			i = (i + 1) % slidestext.length;
+			slidestext[i].classList.add('active');
+		}
+		function prevSlidetext(){
+			slidestext[i].classList.remove('active');
+			i = (i - 1 + slidestext.length) % slidestext.length;
+			slidestext[i].classList.add('active');
+		}
+			function menuToggle(){
+				var nav= document.getElementById('navbar')
+				nav.classList.toggle('active')
+		}
+	
+  </script>
+  </body>
+</html>
